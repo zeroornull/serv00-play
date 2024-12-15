@@ -915,8 +915,8 @@ manageNeZhaAgent(){
 }
 
 updateAgent(){
-  red "暂不提供在线升级, 只适配哪吒面板v0版本系列。"
-  return 1
+  # red "暂不提供在线升级, 只适配哪吒面板v0版本系列。"
+  # return 1
   exepath="${installpath}/serv00-play/nezha/nezha-agent"
   if [ ! -e "$exepath" ]; then
     red "未安装探针，请先安装！！!"
@@ -1007,7 +1007,7 @@ installNeZhaAgent(){
    cd ${workedir}
    if [[ ! -e nezha-agent ]]; then
     echo "正在下载哪吒探针..."
-    local url="https://github.com/nezhahq/agent/releases/download/v0.20.3/nezha-agent_freebsd_amd64.zip"
+    local url="https://github.com/nezhahq/agent/releases/download/latest/nezha-agent_freebsd_amd64.zip"
     agentZip="nezha-agent.zip"
     if ! wget -qO "$agentZip" "$url"; then
         red "下载哪吒探针失败"
